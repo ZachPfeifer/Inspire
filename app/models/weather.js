@@ -20,25 +20,25 @@ export default class Weather {
     let template = `
     <div class="card text-center">
   <div class="card-header">
-    Weather
+    <h4><b>Today's Weather</b></h4>
   </div>
   <div class="card-body">
     <h5 class="card-title">
     ${this.city}
     <br>
-    ${this.icon} |${this.kelvin}
+    ${this.icon} | ${this.kelvin}°
     </h5>
     <p class="card-text">
-    ${this.visibility}
+    Visibility: ${this.visibility}
     <br>
-    ${this.sunrise}
+    Sunrise: ${this.sunrise}
     <br>
-    ${this.sunset}
+    Sunset: ${this.sunset}
     </p>
     <a href="#" class="btn btn-primary">Refresh</a>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    Today
   </div>
 </div>
     
