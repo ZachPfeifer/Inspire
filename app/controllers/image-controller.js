@@ -10,7 +10,6 @@ function _drawImage() {
   // let image = _is.Image.imgurl
   // document.getElementById('bg-image').body.style.backgroundImage = image
   console.log("hello from _drawImage");
-  debugger
   document.getElementById("bg-image").style.backgroundImage = `url('${_is.Image.imgurl}')`;
 
 }

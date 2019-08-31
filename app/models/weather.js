@@ -18,7 +18,7 @@ export default class Weather {
 
   get Template() {
     let template = `
-    <div class="card text-center">
+    <div class="card text-center w-25 p-2 text-white bg-dark mb-3">
   <div class="card-header">
     <h4><b>Today's Weather</b></h4>
   </div>
@@ -35,7 +35,7 @@ export default class Weather {
     <br>
     Sunset: ${this.sunset}
     </p>
-    <a href="#" class="btn btn-primary">Refresh</a>
+    <button onclick="_drawWeather()" class="btn btn-secondary">Refresh</button>
   </div>
   <div class="card-footer text-muted">
     Today

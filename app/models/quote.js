@@ -15,7 +15,7 @@ export default class Quote {
           <p class="card-text">
           <i>"${this.body}"</i>
           <br>
-          ${this.tags}
+          #${this.tags}
           </p>
         </div>
     </div>
