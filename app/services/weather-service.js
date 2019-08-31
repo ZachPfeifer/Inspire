@@ -35,5 +35,6 @@ export default class WeatherService {
 		weatherApi.get().then(res => {
 			_setState('weather', new Weather(res.data))
 		})
+			.catch(err => _setState('error', err.response.data))
 	}
 }

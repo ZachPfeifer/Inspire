@@ -24,4 +24,13 @@ body{
   width: 60%;
   bottom: 60%;
   left: 84%;
+  opacity: 1;
+  fill-opacity: unset;
+}
+
+.todo-pos{
+ position: fixed;
+  width: 60%;
+  bottom: 20%;
+  left: 1%;
 }
