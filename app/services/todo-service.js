@@ -25,6 +25,9 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
+	getOne(name) {
+		throw new Error("Method not implemented.");
+	}
 	get TodoError() {
 		return _state.error
 	}
@@ -33,24 +36,37 @@ export default class TodoService {
 		_subscribers[prop].push(fn)
 	}
 
+	//#region ANCHOR  GETTERS
+	get MyToDo() {
+		return _state.todos.map(td => new Todo(td))
+	}
+	//#endregion
+
+	//#region ANCHOR get____
 	getTodos() {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				_setState('todos', new Todo(res.data)) //FIXME res.data.dat?
 				//TODO Handle this response from the server
+				_setState('todos', new Todo(res.data)) //FIXME res.data.dat?
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
+	//#endregion get____
 
+	//#region ANCHOR  ADD_____
 	addTodo(todo) {
-		todoApi.post('addTodos', todo)
+		todoApi.post('', _state.todos)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				_state.todos.push(new Todo(res.data))
+				_setState('todos', _state.todos) // FIXME res.data.data?
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
+	//#endregion ADD____
 
+	//#region FIXME   toggleTodoStatus
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
 		//TODO Make sure that you found a todo, 
@@ -63,11 +79,14 @@ export default class TodoService {
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
+	//#endregion ToggleToDO
 
+	//#region FIXME   removeTodo
 	removeTodo(todoId) {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
 	}
+	//#endregion removeTodo
 
 }

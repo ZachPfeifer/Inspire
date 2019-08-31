@@ -1,8 +1,10 @@
 export default class Todo {
   constructor(data) {
     console.log('[RAW TO DO API DATA]', data);
+    // this.toDo = data.toDo || []
     this.name = data.name
-    this.message = data.message
+    // this.message = data.message
+    // this.value = data.value
     this.completed = data.completed
     this.description = data.description
 
@@ -33,19 +35,36 @@ export default class Todo {
   //#endregion
 
 
-  get Template() {
+  getTemplate(index) {
     let template =
-      `<p>
-      <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            To Do List
-      </button>
-     </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-    `
+      ` <div class="col-4 list-bg">
+            <h1>${this.name}</h1>
+            <hr>
+                <h3><b>Things to Do:</b></3>
+             <ul>`
+    template += this.getToDoTemplate(index)
+    template += `
+         </ul>
+                <form onsubmit="app.controllers.todoController.addTodo(event, ${index})">
+                    <div class="form-group">
+                        <label for="name">To Do:</label>
+                        <input type="text" class="form-control" name="toDo" placeholder="Enter Things to do here">
+                </div>
+                        <div class="col">
+                            <button class="btn btn-dark" type="submit">Add</button>
+              </form>
+                        <button class="btn btn-dark" type="button" onclick="app.controllers.todoController.removeTodo(${index})">Remove</button>
+                    </div>
+        </div>
+                `
     return template
+  }
+  getToDoTemplate(listIndex) {
+    let toDoTemplate = ""
+    this.toDo.forEach((td, toDoIndex) => {
+      toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
+                ${toDoIndex})"> X </span></h4>`
+    });
+    return toDoTemplate
   }
 }
