@@ -12,6 +12,9 @@
 
 <body class="bg-image" id="bg-image">
 
+	<div id="MyClockDisplay" class="clock badge badge-dark" onload="showTime()"></div>
+	>
+
 	<div class="weather" id="weather">
 		Your Weather Template
 	</div>
@@ -27,13 +30,13 @@
 		<div id="todos"></div>
 	</div>
 
-	<div class="todo-pos">
-		<form onsubmit="app.controllers.listController.	addTodo(event)">
-			<div class="form-group">
-				<label for="name"><b>To Do List</b></label>
-				<input type="text" class="form-control" id="title" name="name" placeholder="Things To Do" required>
-			</div>
-			<button class="btn btn-dark" type="submit">Submit</button>
+	<div class="todo-pos card text-white bg-dark mb-3" style="max-width: 18rem;"">
+		<form onsubmit=" app.controllers.listController. addTodo(event)">
+		<div class="form-group">
+			<label for="name"><b>To Do List</b></label>
+			<input type="text" class="form-control" id="title" name="name" placeholder="Things To Do" required>
+		</div>
+		<button class="btn btn-dark" type="submit">Submit</button>
 		</form>
 		<div id="todoList" class="row">
 
@@ -41,6 +44,7 @@
 		</div>
 	</div>
 
+	<script src="app/clock.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
 </body>
