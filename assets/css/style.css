@@ -1,3 +1,10 @@
+/* Google Fonts:
+font-family: 'Anton', sans-serif;
+font-family: 'Nova Square', cursive;
+font-family: 'Nova Cut', cursive;
+font-family: 'Pacifico', cursive; */
+
+
 body{
   background-color: black
 }
@@ -11,17 +18,26 @@ body{
 .clock {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%) translateY(-50%);
     color: white;
     font-size: 60px;
-    font-family: Orbitron;
+    font-family: 'Nova Cut', cursive;
     letter-spacing: 7px;
+    opacity: 3;
    /* z-index: auto; */
-   opacity: 1;
-
-
+   /* new MAYBE Stuff */
+  width: 500px;
+	height: 500px;
+	transform: skew(20deg);
+	background: #555;
 }
+
+
+
+
+
+
 #todo-error{
   color: red;
   font-size: 2em;
