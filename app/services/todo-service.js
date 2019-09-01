@@ -26,7 +26,14 @@ function _setState(prop, data) {
 
 export default class TodoService {
 	getOne(name) {
-		throw new Error("Method not implemented.");
+		todoApi.get(name)
+			.then(res => {
+				let todo = new Todo(res.data)
+				_setState('todos', todo)
+				console.log(todo);
+			})
+			.catch(err => console.error(err))
+
 	}
 	get TodoError() {
 		return _state.error

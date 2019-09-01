@@ -5,11 +5,11 @@ const _todoService = new TodoService()
 //TODO Create the render function
 function _drawTodos() {
 	let todo = _todoService.MyToDo
-	let template = '<ol>'
-	todo.forEach(td => {
-		template += `<li onclick="app.controllers.todoController.getOne('${td.name}')">${td.name}</li>`
+	let template = ``
+	todo.forEach((td, index) => {
+		template += td.getTemplate(index)
 	})
-	document.getElementById('todos').innerHTML = template + "</ol>"
+	document.getElementById('#todos').innerHTML = template
 }
 
 //NOTE Keep an eye on your console for any of these errors
@@ -40,6 +40,7 @@ export default class TodoController {
 		e.preventDefault()
 		var form = e.target
 		var todo = {
+			name: form.name.value
 			//TODO build the todo object from the data that comes into this method
 		}
 		_todoService.addTodo(todo)

@@ -1,7 +1,7 @@
 export default class Todo {
   constructor(data) {
     console.log('[RAW TO DO API DATA]', data);
-    // this.toDo = data.toDo || []
+    this.toDo = data.toDo || []
     this.name = data.name
     // this.message = data.message
     // this.value = data.value

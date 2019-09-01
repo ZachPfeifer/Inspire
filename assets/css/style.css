@@ -33,4 +33,18 @@ body{
   width: 60%;
   bottom: 20%;
   left: 1%;
+  size: 20%;
+}
+
+.redx{
+color: brown;
+cursor: pointer;}
+
+.strikethrough:checked + span{
+  text-decoration:line-through
+}
+
+input.largerCheckbox{
+  width: 22px;
+  height: 18px;
 }
