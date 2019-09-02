@@ -38,9 +38,9 @@ export default class Todo {
   getTemplate(index) {
     let template =
       `
+      <div class="row">
       <ul>
-       <div class="col todo-pos">
-            <p>${this.description}</p>
+            <li>${this.description}</li>
              `
     // template += this.getToDoTemplate(index)
     template += `
@@ -55,7 +55,7 @@ export default class Todo {
   //   let toDoTemplate = ""
   //   this.description.forEach((td, toDoIndex) => {
   //     toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
-  //               ${toDoIndex})"> X </span></h4>`
+  //              ${toDoIndex})"> X </span></h4>`
   //   });
   //   return toDoTemplate
   // }

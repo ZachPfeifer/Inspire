@@ -31,24 +31,30 @@
 		<form onsubmit=""></form>
 	</div> -->
 
-	<div class="todo-pos card text-white bg-dark mb-3" style="max-width: 18rem;"">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col card text-white bg-dark mb-3" style="max-width: 18rem;"">
 			<form onsubmit=" app.controllers.todoController. addTodo(event)">
-		<div class="form-group">
-			<label for="description"><b>To Do List</b></label>
-			<input type="text" class="form-control" id="description" name="description" placeholder="Things To Do" required>
+				<div class="form-group">
+					<label for="description"><b>To Do List</b></label>
+					<input type="text" class="form-control" id="description" name="description" placeholder="Things To Do"
+						required>
+				</div>
+				<button class="btn btn-secondary" type="submit">Submit</button>
+
+				<div id="todoList" class="col">
+					<div id="todos" class="col mt-3">
+						<!-- Card Template Here -->
+					</div>
+					</form>
+				</div>
+			</div>
+
 		</div>
-		<button class="btn btn-secondary" type="submit">Submit</button>
-		<div id="todoList" class="">
-			</form>
-			<div id="todos"></div>
 
-
-		</div>
-	</div>
-
-	<script src="app/clock.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-	<script type="module" src="app/main.js"></script>
+		<script src="app/clock.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+		<script type="module" src="app/main.js"></script>
 </body>
 
 </html>
