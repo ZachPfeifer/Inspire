@@ -37,24 +37,16 @@ export default class Todo {
 
   getTemplate(index) {
     let template =
-      ` <div class="col-4 list-bg">
-            <h1>${this.description}</h1>
-            <hr>
-                <h3><b>Things to Do:</b></3>
-             <ul>`
+      `
+      <ul>
+       <div class="col todo-pos">
+            <p>${this.description}</p>
+             `
     // template += this.getToDoTemplate(index)
     template += `
          </ul>
-                <form onsubmit="app.controllers.todoController.addTodo(event, ${index})">
-                    <div class="form-group">
-                        <label for="name">To Do:</label>
-                        <input type="text" class="form-control" name="toDo" placeholder="Enter Things to do here">
-                </div>
-                        <div class="col">
-                            <button class="btn btn-dark" type="submit">Add</button>
-              </form>
-                        <button class="btn btn-dark" type="button" onclick="app.controllers.todoController.removeTodo(${index})">Remove</button>
-                    </div>
+         <hr>
+                        <button class="btn btn-secondary" type="button" onclick="app.controllers.todoController.removeTodo(${index})">X</button>
         </div>
                 `
     return template

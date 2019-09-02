@@ -67,8 +67,8 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				_state.todos.push(new Todo(res.data.data))
-				_setState('todos', _state.todos) // FIXME res.data.data?
+				_state.todos.push(new Todo(res.data.data)) // FIXME res.data.data?
+				_setState('todos', _state.todos)
 			})
 		// .catch(err => _setState('error', err.response.data))
 	}
@@ -94,6 +94,12 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+		todoApi.delete(todoId)
+			.then(res => {
+				let index = _state.todos.findIndex(t => t._id == _state.todos._id)
+				_state.todos.splice(index, 1)
+				_setState('todos', _state.todos)
+			})
 	}
 	//#endregion removeTodo
 
