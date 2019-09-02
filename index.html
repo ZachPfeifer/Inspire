@@ -33,10 +33,10 @@
 	</div>
 
 	<div class="todo-pos card text-white bg-dark mb-3" style="max-width: 18rem;"">
-		<form onsubmit=" app.controllers.listController. addTodo(event)">
+		<form onsubmit=" app.controllers.todoController. addTodo(event)">
 		<div class="form-group">
-			<label for="name"><b>To Do List</b></label>
-			<input type="text" class="form-control" id="title" name="name" placeholder="Things To Do" required>
+			<label for="description"><b>To Do List</b></label>
+			<input type="text" class="form-control" id="description" name="description" placeholder="Things To Do" required>
 		</div>
 		<button class="btn btn-dark" type="submit">Submit</button>
 		</form>

@@ -55,21 +55,22 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
-				_setState('todos', new Todo(res.data)) //FIXME res.data.dat?
+				let newTodo = res.data.data.map(td => new Todo(td))
+				_setState('todos', newTodo) //FIXME res.data.dat?
 			})
-			.catch(err => _setState('error', err.response.data))
+		// .catch(err => _setState('error', err.response.data))
 	}
 	//#endregion get____
 
 	//#region ANCHOR  ADD_____
 	addTodo(todo) {
-		todoApi.post('', _state.todos)
+		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				_state.todos.push(new Todo(res.data))
+				_state.todos.push(new Todo(res.data.data))
 				_setState('todos', _state.todos) // FIXME res.data.data?
 			})
-			.catch(err => _setState('error', err.response.data))
+		// .catch(err => _setState('error', err.response.data))
 	}
 	//#endregion ADD____
 
@@ -84,7 +85,7 @@ export default class TodoService {
 			.then(res => {
 				//TODO do you care about this data? or should you go get something else?
 			})
-			.catch(err => _setState('error', err.response.data))
+		// .catch(err => _setState('error', err.response.data))
 	}
 	//#endregion ToggleToDO
 

@@ -9,7 +9,7 @@ function _drawTodos() {
 	todo.forEach((td, index) => {
 		template += td.getTemplate(index)
 	})
-	document.getElementById('#todos').innerHTML = template
+	document.getElementById('todos').innerHTML = template
 }
 
 //NOTE Keep an eye on your console for any of these errors
@@ -38,11 +38,12 @@ export default class TodoController {
 
 	addTodo(e) {
 		e.preventDefault()
-		var form = e.target
-		var todo = {
-			name: form.name.value
+		let form = e.target
+		let todo = {
+			description: form.description.value
 			//TODO build the todo object from the data that comes into this method
 		}
+		form.reset()
 		_todoService.addTodo(todo)
 	}
 

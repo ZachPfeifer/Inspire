@@ -1,8 +1,8 @@
 export default class Todo {
   constructor(data) {
     console.log('[RAW TO DO API DATA]', data);
-    this.toDo = data.toDo || []
-    this.name = data.name
+    // this.toDo = data.toDo || []
+    this.id = data._id
     // this.message = data.message
     // this.value = data.value
     this.completed = data.completed
@@ -38,11 +38,11 @@ export default class Todo {
   getTemplate(index) {
     let template =
       ` <div class="col-4 list-bg">
-            <h1>${this.name}</h1>
+            <h1>${this.description}</h1>
             <hr>
                 <h3><b>Things to Do:</b></3>
              <ul>`
-    template += this.getToDoTemplate(index)
+    // template += this.getToDoTemplate(index)
     template += `
          </ul>
                 <form onsubmit="app.controllers.todoController.addTodo(event, ${index})">
@@ -59,12 +59,12 @@ export default class Todo {
                 `
     return template
   }
-  getToDoTemplate(listIndex) {
-    let toDoTemplate = ""
-    this.toDo.forEach((td, toDoIndex) => {
-      toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
-                ${toDoIndex})"> X </span></h4>`
-    });
-    return toDoTemplate
-  }
+  // getToDoTemplate(listIndex) {
+  //   let toDoTemplate = ""
+  //   this.description.forEach((td, toDoIndex) => {
+  //     toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
+  //               ${toDoIndex})"> X </span></h4>`
+  //   });
+  //   return toDoTemplate
+  // }
 }
