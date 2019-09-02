@@ -31,7 +31,7 @@
 		<form onsubmit=""></form>
 	</div> -->
 
-	<div class="container-fluid">
+	<div class="container-fluid td-op">
 		<div class="row">
 			<div class="col card text-white bg-dark mb-3" style="max-width: 18rem;"">
 			<form onsubmit=" app.controllers.todoController. addTodo(event)">
@@ -42,19 +42,23 @@
 				</div>
 				<button class="btn btn-secondary" type="submit">Submit</button>
 
+				<hr class="hr-todo">
+
+
 				<div id="todoList" class="col">
 					<div id="todos" class="col mt-3">
 						<!-- Card Template Here -->
 					</div>
-					</form>
 				</div>
+				</form>
 			</div>
-
 		</div>
 
-		<script src="app/clock.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-		<script type="module" src="app/main.js"></script>
+	</div>
+
+	<script src="app/clock.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	<script type="module" src="app/main.js"></script>
 </body>
 
 </html>

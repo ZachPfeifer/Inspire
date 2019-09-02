@@ -15,6 +15,7 @@ body{
   left: 50%;
   font-size: 40%;
 } */
+
 .clock {
     position: absolute;
     top: 50%;
@@ -24,7 +25,7 @@ body{
     font-size: 60px;
     font-family: 'Nova Cut', cursive;
     letter-spacing: 7px;
-    opacity: 3;
+    opacity: .8;
    /* z-index: auto; */
    /* new MAYBE Stuff */
   width: 500px;
@@ -32,11 +33,6 @@ body{
 	transform: skew(20deg);
 	background: #555;
 }
-
-
-
-
-
 
 #todo-error{
   color: red;
@@ -54,6 +50,7 @@ body{
   width: 90%;
   bottom: 0%;
   left: 84%;
+    opacity: .8;
 
 }
 .weather{
@@ -61,8 +58,9 @@ body{
   width: 60%;
   bottom: 60%;
   left: 84%;
-  opacity: 1;
   fill-opacity: unset;
+      opacity: .8;
+
 }
 
 .todo-pos{
@@ -71,6 +69,20 @@ body{
   bottom: 20%;
   left: 1%;
   size: 20%;
+      opacity: .8;
+
+}
+.td-op{
+      opacity: .8;
+
+}
+
+.hr-todo{
+  color: black;
+   height: 0px;
+    border: none;
+    border-top: 3px solid black;
+    opacity: 3;
 }
 
 .redx{
