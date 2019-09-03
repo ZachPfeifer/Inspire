@@ -31,9 +31,9 @@ export default class TodoController {
 	}
 
 	//FIXME region Gets???
-	getOne(name) {
-		_todoService.getOne(name)
-	}
+	// getOne(name) {
+	// 	_todoService.getOne(name)
+	// }
 	//#endregion
 
 	addTodo(e) {
@@ -55,7 +55,7 @@ export default class TodoController {
 	//NOTE This method will pass an Id to your service for the TODO that will need to be deleted
 	removeTodo(todoId) {
 		_todoService.removeTodo(todoId)
-		document.getElementById('todos').innerHTML = ''
+		// document.getElementById('todos').innerHTML = ''
 	}
 
 

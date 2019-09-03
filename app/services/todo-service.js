@@ -25,16 +25,17 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
-	getOne(name) {
-		todoApi.get(name)
-			.then(res => {
-				let todo = new Todo(res.data)
-				_setState('todos', todo)
-				console.log(todo);
-			})
-			.catch(err => console.error(err))
+	//REVIEW WHY??
+	// getOne(name) {
+	// 	todoApi.get(name)
+	// 		.then(res => {
+	// 			let todo = res.data.data.map(td => new Todo(td))
+	// 			_setState('todos', todo)
+	// 			console.log(todo);
+	// 		})
+	// 	// .catch(err => console.error(err))
 
-	}
+	// }
 	get TodoError() {
 		return _state.error
 	}
@@ -67,6 +68,7 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				debugger
 				_state.todos.push(new Todo(res.data.data)) // NOTE  res.data.data?
 				_setState('todos', _state.todos)
 			})
@@ -89,14 +91,15 @@ export default class TodoService {
 	}
 	//#endregion ToggleToDO
 
-	//#region ANCHOR    removeTodo
+	//#region FIXME     removeTodo
 	removeTodo(todoId) {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+
 		todoApi.delete(todoId)
 			.then(res => {
-				let index = _state.todos.findIndex(t => t._id == todoId)
+				let index = _state.todos.findIndex(td => td._id == todoId)
 				_state.todos.splice(index, 1)
 				_setState('todos', _state.todos)
 			})

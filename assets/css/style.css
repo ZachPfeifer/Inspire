@@ -85,6 +85,20 @@ body{
     opacity: 3;
 }
 
+.row-1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 50px;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
 .redx{
 color: brown;
 cursor: pointer;}
@@ -97,4 +111,5 @@ input.largerCheckbox{
   width: 22px;
   height: 18px;
 }
+
 

@@ -2,7 +2,7 @@ export default class Todo {
   constructor(data) {
     console.log('[RAW TO DO API DATA]', data);
     // this.toDo = data.toDo || []
-    this.id = data._id
+    this._id = data._id
     // this.message = data.message
     // this.value = data.value
     this.completed = data.completed
@@ -34,29 +34,50 @@ export default class Todo {
   // }
   //#endregion
 
-
   getTemplate(index) {
-    let template =
-      `
-      <div class="row">
-      <ul>
-            <li>${this.description}</li>
-             `
-    // template += this.getToDoTemplate(index)
-    template += `
-         </ul>
-         <hr>
-                        <button class="btn btn-secondary" type="button" onclick="app.controllers.todoController.removeTodo(${index})">X</button>
-        </div>
-                `
+    let template = `
+    <div class="row uppercase">
+        <ul>
+              <label>
+              <span><h5><li>
+              ${this.description}</h5></label>
+              </span></li>
+              <input type="checkbox" name="checkedTodo" class="strikethrough largerCheckbox " checked="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">
+             
+
+              </div>
+              <button class="btn btn-secondary" value="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">✔</button>
+              <button class="btn btn-secondary redx" onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button>
+              </div>
+        </ul>
+</div>
+   `
     return template
   }
-  // getToDoTemplate(listIndex) {
-  //   let toDoTemplate = ""
-  //   this.description.forEach((td, toDoIndex) => {
-  //     toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
-  //              ${toDoIndex})"> X </span></h4>`
-  //   });
-  //   return toDoTemplate
-  // }
+
+  //   getTemplate(index) {
+  //     let template =
+  //       `
+  //       <div class="row">
+  //       <ul>
+  //             <li>${this.description}</li>
+  //              `
+  //     // template += this.getToDoTemplate(index)
+  //     template += `
+  //          </ul>
+  //          <hr>
+  //                         <button class="btn btn-secondary" type="button" onclick="app.controllers.todoController.removeTodo('${this.id}')">X</button>
+  //         </div>
+
+  //         `
+  //     return template
+  //   }
+  //   // getToDoTemplate(listIndex) {
+  //   //   let toDoTemplate = ""
+  //   //   this.description.forEach((td, toDoIndex) => {
+  //   //     toDoTemplate += `<h4><input type="checkbox" name="crossOFF" class="strikethrough largerCheckbox" value="1"><span> ${td} </span><span class="redx" onclick="app.controllers.todoController.removeTodo(${listIndex}, 
+  //   //              ${toDoIndex})"> X </span></h4>`
+  //   //   });
+  //   //   return toDoTemplate
+  //   // }
 }
