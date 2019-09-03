@@ -36,6 +36,13 @@ export default class TodoService {
 	// 	// .catch(err => console.error(err))
 
 	// }
+	countRow() {
+		let rows = document.getElementById("todos").getElementsByTagName("div").length
+		document.getElementById("count").innerHTML
+		console.log(rows);
+		return rows
+	}
+
 	get TodoError() {
 		return _state.error
 	}
@@ -68,7 +75,6 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				debugger
 				_state.todos.push(new Todo(res.data.data)) // NOTE  res.data.data?
 				_setState('todos', _state.todos)
 			})

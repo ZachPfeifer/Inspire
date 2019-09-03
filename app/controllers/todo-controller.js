@@ -10,6 +10,15 @@ function _drawTodos() {
 		template += td.getTemplate(index)
 	})
 	document.getElementById('todos').innerHTML = template
+
+	// FIXME   Row Counter
+	debugger
+	let rows = document.getElementById("todos").getElementsByTagName("div").length
+	document.getElementById("count").innerHTML
+
+	console.log(rows);
+	return rows
+
 }
 
 //NOTE Keep an eye on your console for any of these errors
@@ -58,6 +67,9 @@ export default class TodoController {
 		// document.getElementById('todos').innerHTML = ''
 	}
 
-
+	countRow() {
+		debugger
+		_todoService.countRow()
+	}
 
 }

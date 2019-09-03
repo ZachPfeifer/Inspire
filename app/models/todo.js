@@ -39,15 +39,15 @@ export default class Todo {
     <div class="row uppercase">
         <ul>
               <label>
-              <span><h5><li>
+              <span><h5>
+              <input type="checkbox" name="checkedTodo" class="strikethrough largerCheckbox " checked="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"><span>
               ${this.description}</h5></label>
-              </span></li>
-              <input type="checkbox" name="checkedTodo" class="strikethrough largerCheckbox " checked="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">
+              </span>
              
 
-              </div>
               <button class="btn btn-secondary" value="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">✔</button>
               <button class="btn btn-secondary redx" onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button>
+              </div>
               </div>
         </ul>
 </div>

@@ -33,15 +33,16 @@
 
 	<div class="container-fluid td-op">
 		<div class="row">
-			<div class="col card text-white bg-dark mb-3" style="max-width: 18rem;"">
-			<form onsubmit=" app.controllers.todoController. addTodo(event)">
+			<div class="col card text-white bg-dark mb-3" style="max-width: 30rem;"">
+			<form onsubmit=" app.controllers.todoController.addTodo(event)">
 				<div class="form-group">
 					<label for="description"><b>To Do List</b></label>
 					<input type="text" class="form-control" id="description" name="description" placeholder="Things To Do"
 						required>
+					<button class="btn btn-secondary" type="submit">Add to Do</button>
+					<p>Total To Do's:<p id="count" onsubmit="app.controllers.todoController.countRows()">--</p>
+					</p>
 				</div>
-				<button class="btn btn-secondary" type="submit">Submit</button>
-
 				<hr class="hr-todo">
 
 
