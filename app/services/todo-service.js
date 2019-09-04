@@ -64,7 +64,7 @@ export default class TodoService {
 			.then(res => {
 				//TODO Handle this response from the server
 				let newTodo = res.data.data.map(td => new Todo(td))
-				_setState('todos', newTodo) //FIXME res.data.dat?
+				_setState('todos', newTodo)
 			})
 		// .catch(err => _setState('error', err.response.data))
 	}
@@ -88,16 +88,28 @@ export default class TodoService {
 		//TODO Make sure that you found a todo, 
 		//		and if you did find one
 		//		change its completed status to whatever it is not (ex: false => true or true => false)
+		if (todo) {
+			if (todo.completed == false) {
+				todo.completed = true
+			} else {
+				todo.completed = false
+
+			}
+		}
+
 
 		todoApi.put(todoId, todo)
 			.then(res => {
 				//TODO do you care about this data? or should you go get something else?
+				console.log(_state.todos);
+				_setState("todos", _state.todos)
 			})
 		// .catch(err => _setState('error', err.response.data))
+		return
 	}
 	//#endregion ToggleToDO
 
-	//#region FIXME     removeTodo
+	//#region ANCHOR      removeTodo
 	removeTodo(todoId) {
 		//TODO Work through this one on your own
 		//		what is the request type

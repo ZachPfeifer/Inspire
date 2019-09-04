@@ -40,8 +40,9 @@
 					<input type="text" class="form-control" id="description" name="description" placeholder="Things To Do"
 						required>
 					<button class="btn btn-secondary" type="submit">Add to Do</button>
-					<p>Total To Do's:<p id="count" onsubmit="app.controllers.todoController.countRows()">--</p>
-					</p>
+					<span>Total To Do's:<span id="count" onsubmit="app.controllers.todoController.addTodo(event)">
+							<b> </b></span>
+					</span>
 				</div>
 				<hr class="hr-todo">
 

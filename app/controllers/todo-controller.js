@@ -12,12 +12,14 @@ function _drawTodos() {
 	document.getElementById('todos').innerHTML = template
 
 	// FIXME   Row Counter
-	debugger
 	let rows = document.getElementById("todos").getElementsByTagName("div").length
-	document.getElementById("count").innerHTML
+	document.getElementById("count").innerText += rows
+	//TODO Create a div or span with an id you can target
+	//INNERhtml = `P tag with the ${variable containing length here}`
 
 	console.log(rows);
 	return rows
+
 
 }
 
@@ -68,7 +70,6 @@ export default class TodoController {
 	}
 
 	countRow() {
-		debugger
 		_todoService.countRow()
 	}
 

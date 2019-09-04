@@ -103,11 +103,14 @@ body{
 color: brown;
 cursor: pointer;}
 
+.strikethrough:unchecked+ span{
+text-decoration: none;
+}
 .strikethrough:checked + span{
-  text-decoration:line-through
+  text-decoration:line-through;
 }
 
-input.largerCheckbox{
+input.largerCheckbox {
   width: 22px;
   height: 18px;
 }

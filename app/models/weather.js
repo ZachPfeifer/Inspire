@@ -26,7 +26,7 @@ export default class Weather {
     <h5 class="card-title">
     ${this.city}
     <br>
-    ${this.icon} | ${this.kelvin}°
+    ${this.icon} | ${this.kelvin}°F
     </h5>
     <p class="card-text">
     Visibility: ${this.visibility}

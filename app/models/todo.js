@@ -33,27 +33,34 @@ export default class Todo {
   //             "path": "_id"
   // }
   //#endregion
-
+  //TODO checked is an attribute, does not require 'true' 'false' - you can use ${ternery in here}
+  //to apply the attribute 
+  // ${condition ? 'thing to return if true' : 'thing to return if false'}
   getTemplate(index) {
     let template = `
     <div class="row uppercase">
         <ul>
               <label>
               <span><h5>
-              <input type="checkbox" name="checkedTodo" class="strikethrough largerCheckbox " checked="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"><span>
+              <input type="checkbox" name="checkedTodo" class="strikethrough largerCheckbox " ${this.completed ? 'unchecked' : 'checked'}  onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"><span>
               ${this.description}</h5></label>
               </span>
              
-
-              <button class="btn btn-secondary" value="${this.completed}" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">✔</button>
-              <button class="btn btn-secondary redx" onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button>
+                          <button class="btn btn-secondary redx" onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button>
               </div>
               </div>
         </ul>
 </div>
    `
     return template
+
   }
+  //   getTemplateCounter(){
+  //     let templateCounter = `
+  //     < span > Total To Do's:<span id="count" onsubmit="app.controllers.todoController.addTodo(event)">{}</span>
+  // 				</span >
+  //     `
+  // }
 
   //   getTemplate(index) {
   //     let template =
